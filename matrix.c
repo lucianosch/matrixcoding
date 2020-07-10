@@ -16,11 +16,12 @@ int main()
 	convert(parola,ascii);								
 	printf("ascii: ");
 	outascii(ascii,parola);
-	intbin(bintmp,ascii,parola); //bintmp,num 
-	bin(bintmp,binv,parola);
+	intbin(bintmp,binv,ascii,parola); 
+
 	printf("\n");
 	verifica(array,binv,parola);
 	stampa(array,binv,parola);
+	printf("\n\n");
 	
 	
 return 0;
