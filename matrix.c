@@ -13,10 +13,9 @@ int main()
 	
 	printf("inserisci parola: ");
 	scanf("%s",parola);
-	
-	convert(parola,ascii);								
+								
 	printf("ascii: ");
-	outascii(ascii,parola);
+	fascii(ascii,parola);
 	intbin(bintmp,binv,ascii,parola); 
 
 	printf("\n");

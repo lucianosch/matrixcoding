@@ -4,18 +4,13 @@
 
 #include "matrixlib.h"
 
-void outascii(int ascii[],char parola[])
-{
-	for(int i=0;i<strlen(parola);i++){
-		printf("%d ",ascii[i]);
-	}
-		
-}
-void convert(char parola[],int ascii[])
+void fascii(int ascii[],char parola[])
 {
 	for(int i=0;i<strlen(parola);i++){
 		ascii[i]=(int)parola[i];	
+		printf("%d ",ascii[i]);
 	}
+		
 }
 void intbin(int b[][C],int binv[][C],int n[],char parola[]) //n=numero ascii
 {
@@ -28,10 +23,8 @@ void intbin(int b[][C],int binv[][C],int n[],char parola[]) //n=numero ascii
 			}else{
 				b[i][j]=1;	
 			}
-			//printf("%d",b[i][j]);
 			n[i]=n[i]/2;
 		}	
-		//printf("\n");
 	}
 	
 	binReverse(b,binv,parola);
@@ -50,30 +43,33 @@ void binReverse(int bintmp[][C],int pbin[][C],char parola[])
 	
 }
 
-void stampa(int arrbp[],int arrcheck[],int pbi[][C],char parola[])
+void stampa(int arrbp[],int arrcs[],int pbi[][C],char parola[])
 {
 	for(int i=0;i<strlen(parola);i++){
-		/*stampa parola*/
+		//stampa parola
 		printf("\n%c: ",parola[i]);
 		for(int j=0;j<C;j++){
-			/*stampa binario*/
+			//stampa stringa binaria
 			printf("%d",pbi[i][j]);			
 		}
 		/*stampa bp*/
 		printf("| %d",arrbp[i]);
 	}
+	
+	//stampa separatore
 	printf("\n");
 	for(int i=0;i<11;i++)
 		printf("-");
 	
+	/*stampa cs*/
 	printf("\ncs ");
 	for(int j=0;j<C;j++){
-		printf("%d",arrcheck[j]);
+		printf("%d",arrcs[j]);
 	}
 }
-void verifica(int arraybp[],int arraycheck[],int m[][C],char parola[])
+void verifica(int arraybp[],int arraycs[],int m[][C],char parola[])
 {
-	int i=0,j=0,r=strlen(parola),contbp=0,contcheck=0;
+	int i=0,j=0,r=strlen(parola),contbp=0,contcs=0;
 	
 	/*Bit di parità*/
 	for(i=0;i<r;i++){
@@ -95,15 +91,15 @@ void verifica(int arraybp[],int arraycheck[],int m[][C],char parola[])
 	for(j=0;j<C;j++){
 		for(i=0;i<r;i++){
 			if(m[i][j]==1){
-				contcheck++;
+				contcs++;
 			}
 		}
-		if(contcheck%2==0){
-			arraycheck[j]=0;
-		}else if(contcheck%2==1){
-			arraycheck[j]=1;	
+		if(contcs%2==0){
+			arraycs[j]=0;//pari
+		}else if(contcs%2==1){
+			arraycs[j]=1;//dispari
 		}
-		contcheck=0;
+		contcs=0;
 	}
 }
 
