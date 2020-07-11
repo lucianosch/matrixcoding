@@ -8,7 +8,8 @@ int main()
 	int ascii[R];
 	char parola[R];
 	
-	int array[R];
+	int arrbp[R];
+	int arrcheck[C];
 	
 	printf("inserisci parola: ");
 	scanf("%s",parola);
@@ -19,9 +20,10 @@ int main()
 	intbin(bintmp,binv,ascii,parola); 
 
 	printf("\n");
-	verifica(array,binv,parola);
-	stampa(array,binv,parola);
-	printf("\n\n");
+	verifica(arrbp,arrcheck,binv,parola);
+	printf("\t    bp");
+	stampa(arrbp,arrcheck,binv,parola);
+	printf("\n");
 	
 	
 return 0;
