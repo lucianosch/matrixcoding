@@ -12,8 +12,8 @@ int main()
 	int arrcheck[C];
 	
 	printf("inserisci parola: ");
-	scanf("%s",parola);
-								
+	//scanf("%s",parola);
+	fgets(parola,99,stdin);							
 	printf("ascii: ");
 	fascii(ascii,parola);
 	intbin(bintmp,binv,ascii,parola); 

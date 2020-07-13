@@ -6,7 +6,8 @@
 
 void fascii(int ascii[],char parola[])
 {
-	for(int i=0;i<strlen(parola);i++){
+	int l = strlen(parola)-1;
+	for(int i=0;i<l;i++){
 		ascii[i]=(int)parola[i];	
 		printf("%d ",ascii[i]);
 	}
@@ -15,8 +16,8 @@ void fascii(int ascii[],char parola[])
 void intbin(int b[][C],int binv[][C],int n[],char parola[]) //n=numero ascii
 {
 	printf("\n");
-	
-	for(int i=0;i<strlen(parola);i++){
+	int l = strlen(parola)-1;
+	for(int i=0;i<l;i++){
 		for(int j=0;j<C;j++){
 			if(n[i]%2==0){
 				b[i][j]=0;
@@ -33,7 +34,8 @@ void intbin(int b[][C],int binv[][C],int n[],char parola[]) //n=numero ascii
 void binReverse(int bintmp[][C],int pbin[][C],char parola[])
 {
 	int z,j=0,i=0;
-	for(i=0;i<strlen(parola);i++){
+	int l = strlen(parola)-1;
+	for(i=0;i<l;i++){
 		z=0;
 		for(j=C-1;j>=0;j--){
 			pbin[i][z++]=bintmp[i][j];
@@ -45,7 +47,8 @@ void binReverse(int bintmp[][C],int pbin[][C],char parola[])
 
 void stampa(int arrbp[],int arrcs[],int pbi[][C],char parola[])
 {
-	for(int i=0;i<strlen(parola);i++){
+	int l = strlen(parola)-1;
+	for(int i=0;i<l;i++){
 		//stampa parola
 		printf("\n%c: ",parola[i]);
 		for(int j=0;j<C;j++){
@@ -69,7 +72,7 @@ void stampa(int arrbp[],int arrcs[],int pbi[][C],char parola[])
 }
 void verifica(int arraybp[],int arraycs[],int m[][C],char parola[])
 {
-	int i=0,j=0,r=strlen(parola),contbp=0,contcs=0;
+	int i=0,j=0,r=strlen(parola)-1,contbp=0,contcs=0;
 	
 	/*Bit di parità*/
 	for(i=0;i<r;i++){
